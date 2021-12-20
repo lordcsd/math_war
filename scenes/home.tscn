@@ -1,0 +1,291 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://imageImports/homeTop.png" type="Texture" id=1]
+[ext_resource path="res://imageImports/unlocked.png" type="Texture" id=2]
+[ext_resource path="res://myTheme.tres" type="Theme" id=3]
+[ext_resource path="res://fonts/ComicNeue-Regular.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://imageImports/ShareApp.png" type="Texture" id=5]
+[ext_resource path="res://imageImports/RateStar.png" type="Texture" id=6]
+[ext_resource path="res://imageImports/answerButton.png" type="Texture" id=7]
+[ext_resource path="res://scripts/home.gd" type="Script" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 34
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 22
+font_data = ExtResource( 4 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.862745, 0.847059, 0.870588, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="upperPart" type="Control" parent="."]
+anchor_right = 1.0
+margin_bottom = 347.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="upperPartTexture" type="TextureRect" parent="upperPart"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -81.0
+size_flags_horizontal = 3
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 7
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HighScoreLabel" type="Label" parent="upperPart"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -123.5
+margin_right = 180.0
+margin_bottom = -64.5
+theme = ExtResource( 3 )
+custom_fonts/font = SubResource( 1 )
+text = "HighScore"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HighScoreValue" type="Label" parent="upperPart"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -93.5
+margin_right = 259.0
+margin_bottom = 1.5
+theme = ExtResource( 3 )
+custom_fonts/font = SubResource( 2 )
+text = "HighScore"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Rate" type="TextureButton" parent="upperPart"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -79.7281
+margin_top = 22.3446
+margin_right = -23.7281
+margin_bottom = 70.3446
+texture_normal = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ShareApp" type="TextureButton" parent="upperPart"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -84.2728
+margin_top = 100.092
+margin_right = -34.2728
+margin_bottom = 148.092
+texture_normal = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSeparator" type="HSeparator" parent="upperPart"]
+margin_left = 31.0
+margin_top = 13.0
+margin_right = 209.0
+margin_bottom = 188.0
+theme = ExtResource( 3 )
+
+[node name="freeCoins" type="Button" parent="upperPart"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -204.0
+margin_top = 177.0
+margin_right = -26.0
+margin_bottom = 250.0
+theme = ExtResource( 3 )
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.396078, 0.243137, 0.501961, 1 )
+text = "Get Free Coins"
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="upperPart/freeCoins"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="listPart" type="GridContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -214.0
+margin_top = -27.0
+margin_right = 215.0
+margin_bottom = 269.0
+theme = ExtResource( 3 )
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="primeNumbers" type="Button" parent="listPart"]
+margin_right = 206.0
+margin_bottom = 56.0
+size_flags_horizontal = 3
+theme = ExtResource( 3 )
+custom_colors/font_color = Color( 0.396078, 0.243137, 0.501961, 1 )
+text = " Prime Numbers"
+icon = ExtResource( 2 )
+flat = true
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Addition" type="Button" parent="listPart"]
+margin_left = 210.0
+margin_right = 429.0
+margin_bottom = 56.0
+size_flags_horizontal = 3
+theme = ExtResource( 3 )
+custom_colors/font_color = Color( 0.396078, 0.243137, 0.501961, 1 )
+text = " Addition"
+icon = ExtResource( 2 )
+flat = true
+align = 0
+
+[node name="Multiplication" type="Button" parent="listPart"]
+margin_top = 60.0
+margin_right = 206.0
+margin_bottom = 116.0
+size_flags_horizontal = 3
+theme = ExtResource( 3 )
+custom_colors/font_color = Color( 0.396078, 0.243137, 0.501961, 1 )
+text = " Multiplication"
+icon = ExtResource( 2 )
+flat = true
+align = 0
+
+[node name="Subtraction" type="Button" parent="listPart"]
+margin_left = 210.0
+margin_top = 60.0
+margin_right = 429.0
+margin_bottom = 116.0
+size_flags_horizontal = 3
+theme = ExtResource( 3 )
+custom_colors/font_color = Color( 0.396078, 0.243137, 0.501961, 1 )
+text = " Subtraction"
+icon = ExtResource( 2 )
+flat = true
+align = 0
+
+[node name="Division" type="Button" parent="listPart"]
+margin_top = 120.0
+margin_right = 206.0
+margin_bottom = 176.0
+size_flags_horizontal = 3
+theme = ExtResource( 3 )
+custom_colors/font_color = Color( 0.396078, 0.243137, 0.501961, 1 )
+text = " Division"
+icon = ExtResource( 2 )
+flat = true
+align = 0
+
+[node name="Simple Equations" type="Button" parent="listPart"]
+margin_left = 210.0
+margin_top = 120.0
+margin_right = 429.0
+margin_bottom = 176.0
+size_flags_horizontal = 3
+theme = ExtResource( 3 )
+custom_colors/font_color = Color( 0.396078, 0.243137, 0.501961, 1 )
+text = " Simple Equations"
+icon = ExtResource( 2 )
+flat = true
+align = 0
+
+[node name="Factors" type="Button" parent="listPart"]
+margin_top = 180.0
+margin_right = 206.0
+margin_bottom = 236.0
+size_flags_horizontal = 3
+theme = ExtResource( 3 )
+custom_colors/font_color = Color( 0.396078, 0.243137, 0.501961, 1 )
+text = " Factors"
+icon = ExtResource( 2 )
+flat = true
+align = 0
+
+[node name="Multiples" type="Button" parent="listPart"]
+margin_left = 210.0
+margin_top = 180.0
+margin_right = 429.0
+margin_bottom = 236.0
+size_flags_horizontal = 3
+theme = ExtResource( 3 )
+custom_colors/font_color = Color( 0.396078, 0.243137, 0.501961, 1 )
+text = " Multiples"
+icon = ExtResource( 2 )
+flat = true
+align = 0
+
+[node name="Squares" type="Button" parent="listPart"]
+margin_top = 240.0
+margin_right = 206.0
+margin_bottom = 296.0
+size_flags_horizontal = 3
+theme = ExtResource( 3 )
+custom_colors/font_color = Color( 0.396078, 0.243137, 0.501961, 1 )
+text = " Squares"
+icon = ExtResource( 2 )
+flat = true
+align = 0
+
+[node name="SquareRoots" type="Button" parent="listPart"]
+margin_left = 210.0
+margin_top = 240.0
+margin_right = 429.0
+margin_bottom = 296.0
+size_flags_horizontal = 3
+theme = ExtResource( 3 )
+custom_colors/font_color = Color( 0.396078, 0.243137, 0.501961, 1 )
+text = " SquareRoots"
+icon = ExtResource( 2 )
+flat = true
+align = 0
+[connection signal="pressed" from="listPart/primeNumbers" to="." method="_on_primeNumbers_pressed"]
+[connection signal="pressed" from="listPart/Addition" to="." method="_on_Addition_pressed"]
+[connection signal="pressed" from="listPart/Multiplication" to="." method="_on_Multiplication_pressed"]
+[connection signal="pressed" from="listPart/Subtraction" to="." method="_on_Subtraction_pressed"]
+[connection signal="pressed" from="listPart/Division" to="." method="_on_Division_pressed"]
+[connection signal="pressed" from="listPart/Simple Equations" to="." method="_on_Simple_Equations_pressed"]
+[connection signal="pressed" from="listPart/Factors" to="." method="_on_Factors_pressed"]
+[connection signal="pressed" from="listPart/Multiples" to="." method="_on_Multiples_pressed"]
+[connection signal="pressed" from="listPart/Squares" to="." method="_on_Squares_pressed"]
+[connection signal="pressed" from="listPart/SquareRoots" to="." method="_on_SquareRoots_pressed"]
